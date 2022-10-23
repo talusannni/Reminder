@@ -2054,16 +2054,81 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./resources/js/ReactDataTableApp.js":
+/*!*******************************************!*\
+  !*** ./resources/js/ReactDataTableApp.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ReactDataTableApp)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_DataTable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/DataTable */ "./resources/js/components/DataTable.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+var ReactDataTableApp = /*#__PURE__*/function (_Component) {
+  _inherits(ReactDataTableApp, _Component);
+  var _super = _createSuper(ReactDataTableApp);
+  function ReactDataTableApp(props) {
+    _classCallCheck(this, ReactDataTableApp);
+    return _super.call(this, props);
+  }
+  _createClass(ReactDataTableApp, [{
+    key: "render",
+    value: function render() {
+      var columns = ['id', 'name', 'status', 'schedule_at', ''];
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_DataTable__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        url: "/api/reminders/",
+        columns: columns
+      });
+    }
+  }]);
+  return ReactDataTableApp;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _ReactDataTableApp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ReactDataTableApp */ "./resources/js/ReactDataTableApp.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-// React Components
-__webpack_require__(/*! ./components/HelloReact */ "./resources/js/components/HelloReact.js");
+
+var rootElement = document.getElementById('datatable');
+var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(rootElement);
+if (document.getElementById('datatable')) {
+  root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ReactDataTableApp__WEBPACK_IMPORTED_MODULE_2__["default"], {}));
+}
 
 /***/ }),
 
@@ -2103,32 +2168,293 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/components/HelloReact.js":
-/*!***********************************************!*\
-  !*** ./resources/js/components/HelloReact.js ***!
-  \***********************************************/
+/***/ "./resources/js/components/DataTable.js":
+/*!**********************************************!*\
+  !*** ./resources/js/components/DataTable.js ***!
+  \**********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ HelloReact)
+/* harmony export */   "default": () => (/* binding */ DataTable)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
 
-function HelloReact() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
-    children: "Hello React!"
-  });
-}
-if (document.getElementById('hello-react')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(HelloReact, {}), document.getElementById('hello-react'));
-}
+var DataTable = /*#__PURE__*/function (_Component) {
+  _inherits(DataTable, _Component);
+  var _super = _createSuper(DataTable);
+  function DataTable(props) {
+    var _this;
+    _classCallCheck(this, DataTable);
+    _this = _super.call(this, props);
+    _this.state = {
+      entities: {
+        data: [],
+        meta: {
+          current_page: 1,
+          from: 1,
+          last_page: 1,
+          per_page: 10,
+          to: 1,
+          total: 1
+        }
+      },
+      first_page: 1,
+      current_page: 1,
+      sorted_column: _this.props.columns[0],
+      offset: 4,
+      order: 'asc'
+    };
+    return _this;
+  }
+  _createClass(DataTable, [{
+    key: "fetchEntities",
+    value: function fetchEntities() {
+      var _this2 = this;
+      var fetchUrl = "".concat(this.props.url, "/?page=").concat(this.state.current_page, "&column=").concat(this.state.sorted_column, "&order=").concat(this.state.order, "&per_page=").concat(this.state.entities.meta.per_page);
+      axios.get(fetchUrl).then(function (response) {
+        _this2.setState({
+          entities: response.data
+        });
+      })["catch"](function (e) {
+        console.error(e);
+      });
+    }
+  }, {
+    key: "changePage",
+    value: function changePage(pageNumber) {
+      var _this3 = this;
+      this.setState({
+        current_page: pageNumber
+      }, function () {
+        _this3.fetchEntities();
+      });
+    }
+  }, {
+    key: "columnHead",
+    value: function columnHead(value) {
+      return value.split('_').join(' ').toUpperCase();
+    }
+  }, {
+    key: "pagesNumbers",
+    value: function pagesNumbers() {
+      if (!this.state.entities.meta.to) {
+        return [];
+      }
+      var from = this.state.entities.meta.current_page - this.state.offset;
+      if (from < 1) {
+        from = 1;
+      }
+      var to = from + this.state.offset * 2;
+      if (to >= this.state.entities.meta.last_page) {
+        to = this.state.entities.meta.last_page;
+      }
+      var pagesArray = [];
+      for (var page = from; page <= to; page++) {
+        pagesArray.push(page);
+      }
+      return pagesArray;
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this4 = this;
+      this.setState({
+        current_page: this.state.entities.meta.current_page
+      }, function () {
+        _this4.fetchEntities();
+      });
+    }
+  }, {
+    key: "tableHeads",
+    value: function tableHeads() {
+      var _this5 = this;
+      var icon;
+      if (this.state.order === 'asc') {
+        icon = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+          className: "fas fa-arrow-up"
+        });
+      } else {
+        icon = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+          className: "fas fa-arrow-down"
+        });
+      }
+      return this.props.columns.map(function (column) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("th", {
+          className: "table-head",
+          onClick: function onClick() {
+            return _this5.sortByColumn(column);
+          },
+          children: [_this5.columnHead(column), column === _this5.state.sorted_column && icon]
+        }, column);
+      });
+    }
+  }, {
+    key: "userList",
+    value: function userList() {
+      var _this6 = this;
+      if (this.state.entities.data.length) {
+        return this.state.entities.data.map(function (user) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("tr", {
+            children: [Object.keys(user).map(function (key) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+                children: user[key]
+              }, key);
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("td", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "/reminder/" + user.id + "/edit",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+                  className: "far fa-edit"
+                })
+              }), "\xA0", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+                href: "#",
+                onClick: function onClick() {
+                  if (window.confirm('Are you sure you wish to delete ' + user.name + '?')) _this6.removeData(user.id);
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("i", {
+                  className: "far fa-trash-alt"
+                })
+              })]
+            })]
+          }, user.id);
+        });
+      } else {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tr", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("td", {
+            colSpan: this.props.columns.length,
+            className: "text-center",
+            children: "No Reminders Found."
+          })
+        });
+      }
+    }
+  }, {
+    key: "removeData",
+    value: function removeData(id) {
+      var _this7 = this;
+      var url = "/reminder/" + id;
+      axios["delete"](url).then(function (res) {
+        var del = _this7.state.entities.data.filter(function (row) {
+          return id !== row.id;
+        });
+        _this7.setState({
+          data: del
+        });
+        console.log('res', res);
+      });
+    }
+  }, {
+    key: "sortByColumn",
+    value: function sortByColumn(column) {
+      var _this8 = this;
+      if (column === this.state.sorted_column) {
+        this.state.order === 'asc' ? this.setState({
+          order: 'desc',
+          current_page: this.state.first_page
+        }, function () {
+          _this8.fetchEntities();
+        }) : this.setState({
+          order: 'asc'
+        }, function () {
+          _this8.fetchEntities();
+        });
+      } else {
+        this.setState({
+          sorted_column: column,
+          order: 'asc',
+          current_page: this.state.first_page
+        }, function () {
+          _this8.fetchEntities();
+        });
+      }
+    }
+  }, {
+    key: "pageList",
+    value: function pageList() {
+      var _this9 = this;
+      return this.pagesNumbers().map(function (page) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+          className: page === _this9.state.entities.meta.current_page ? 'page-item active' : 'page-item',
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+            className: "page-link",
+            onClick: function onClick() {
+              return _this9.changePage(page);
+            },
+            children: page
+          })
+        }, page);
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this10 = this;
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "data-table",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("table", {
+          className: "table table-bordered",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("thead", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tr", {
+              children: this.tableHeads()
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("tbody", {
+            children: this.userList()
+          })]
+        }), this.state.entities.data && this.state.entities.data.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("nav", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("ul", {
+            className: "pagination",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+              className: "page-item",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+                className: "page-link",
+                disabled: 1 === this.state.entities.meta.current_page,
+                onClick: function onClick() {
+                  return _this10.changePage(_this10.state.entities.meta.current_page - 1);
+                },
+                children: "Previous"
+              })
+            }), this.pageList(), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+              className: "page-item",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+                className: "page-link",
+                disabled: this.state.entities.meta.last_page === this.state.entities.meta.current_page,
+                onClick: function onClick() {
+                  return _this10.changePage(_this10.state.entities.meta.current_page + 1);
+                },
+                children: "Next"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
+              style: {
+                marginTop: '8px'
+              },
+              children: [" \xA0 ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("i", {
+                children: ["Displaying ", this.state.entities.data.length, " of ", this.state.entities.meta.total, " entries."]
+              })]
+            })]
+          })
+        })]
+      });
+    }
+  }]);
+  return DataTable;
+}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+
 
 /***/ }),
 
@@ -49420,6 +49746,39 @@ if (
 }
         
   })();
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/react-dom/client.js":
+/*!******************************************!*\
+  !*** ./node_modules/react-dom/client.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var m = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+if (false) {} else {
+  var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+  exports.createRoot = function(c, o) {
+    i.usingClientEntryPoint = true;
+    try {
+      return m.createRoot(c, o);
+    } finally {
+      i.usingClientEntryPoint = false;
+    }
+  };
+  exports.hydrateRoot = function(c, h, o) {
+    i.usingClientEntryPoint = true;
+    try {
+      return m.hydrateRoot(c, h, o);
+    } finally {
+      i.usingClientEntryPoint = false;
+    }
+  };
 }
 
 
