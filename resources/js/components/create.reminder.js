@@ -30,7 +30,7 @@ export default function CreateReminder() {
         icon:"success",
         text:data.message
       })
-      navigate("/reminder")
+      navigate("/reminder/")
     }).catch(({response})=>{
       if(response.status===422){
         setValidationError(response.data.errors)

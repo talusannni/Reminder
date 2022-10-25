@@ -7055,7 +7055,7 @@ function CreateReminder() {
                   icon: "success",
                   text: data.message
                 });
-                navigate("/");
+                navigate("/reminder/");
               })["catch"](function (_ref3) {
                 var response = _ref3.response;
                 if (response.status === 422) {
@@ -7152,7 +7152,7 @@ function CreateReminder() {
                       controlId: "Schedule_at",
                       className: "mb-3",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_5__["default"].Label, {
-                        children: "Schedule_at"
+                        children: "Schedule At"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_5__["default"].Control, {
                         type: "datetime-local",
                         value: schedule_at,
@@ -7398,7 +7398,7 @@ function EditReminder() {
                       controlId: "Schedule_at",
                       className: "mb-3",
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_5__["default"].Label, {
-                        children: "Schedule_at"
+                        children: "Schedule At"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_5__["default"].Control, {
                         type: "datetime-local",
                         value: schedule_at,
