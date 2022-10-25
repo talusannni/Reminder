@@ -23,6 +23,6 @@ class Reminder extends Model
      */
     protected $primaryKey = 'id';
 
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'note', 'schedule_at'];
 
 }
