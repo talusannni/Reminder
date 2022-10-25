@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Log;
 use App\Models\Reminder;
 use Illuminate\Http\Request;
 use App\Http\Resources\ReminderResource;
@@ -15,7 +16,7 @@ class ReminderController extends Controller
      */
     public function index()
     {
-        return view("Reminders");
+        return view("Reminders.list");
     }
 
     /**
@@ -57,9 +58,11 @@ class ReminderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Reminder $reminder)
     {
-        //
+        return response()->json([
+            'reminder'=>$reminder
+        ]);
     }
 
     /**
@@ -70,7 +73,8 @@ class ReminderController extends Controller
      */
     public function edit($id)
     {
-        //
+        $reminder = Reminder::find($id);
+        return view('Reminders.edit', compact('reminder'));
     }
 
     /**
@@ -80,9 +84,24 @@ class ReminderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Reminder $reminder)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'schedule_at'=>'required'
+        ]);
+        try{
+            $reminder->fill($request->post())->update();
+
+            return response()->json([
+                'message'=>'Reminder Updated Successfully!!'
+            ]);
+        }catch(\Exception $e){
+            Log::error($e->getMessage());
+            return response()->json([
+                'message'=>'Something goes wrong while updating Reminder!!'
+            ],500);
+        }
     }
 
     /**

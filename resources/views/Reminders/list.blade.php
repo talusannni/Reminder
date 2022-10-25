@@ -1,6 +1,7 @@
 <x-layout>
-    <div class="flex-center position-ref full-height" id="app">
-        <div class="container">
+    <div id="app">
+        <div class="container py-4">
+            <h1>Reminders</h1>
             <div id="datatable"></div>
         </div>
     </div>
