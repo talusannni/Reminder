@@ -18,7 +18,7 @@ class CreateRemindersTable extends Migration
             $table->string('name');
             $table->string('note')->nullable();
             $table->enum('status', ['Created', 'Scheduled', 'Completed']);
-            $table->timestamp('schedule_at');
+            $table->dateTime('schedule_at');
             $table->timestamps();
         });
     }

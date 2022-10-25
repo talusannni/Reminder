@@ -7295,13 +7295,13 @@ function EditReminder() {
               formData.append('note', note);
               formData.append('schedule_at', schedule_at);
               _context2.next = 8;
-              return axios__WEBPACK_IMPORTED_MODULE_1___default().post("reminder/" + id, formData).then(function (_ref5) {
+              return axios__WEBPACK_IMPORTED_MODULE_1___default().post("/reminder/" + id, formData).then(function (_ref5) {
                 var data = _ref5.data;
                 sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                   icon: "success",
                   text: data.message
                 });
-                navigate("/");
+                navigate("/reminder/");
               })["catch"](function (_ref6) {
                 var response = _ref6.response;
                 if (response.status === 422) {

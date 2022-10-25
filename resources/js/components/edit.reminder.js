@@ -44,12 +44,12 @@ export default function EditReminder() {
     formData.append('note', note)
     formData.append('schedule_at', schedule_at)
 
-    await axios.post("reminder/" + id, formData).then(({data})=>{
+    await axios.post("/reminder/" + id, formData).then(({data})=>{
       Swal.fire({
         icon:"success",
         text:data.message
       })
-      navigate("/")
+      navigate("/reminder/")
     }).catch(({response})=>{
       if(response.status===422){
         setValidationError(response.data.errors)
