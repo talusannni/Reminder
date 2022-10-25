@@ -112,7 +112,7 @@ export default function EditReminder() {
                   <Row>
                     <Col>
                       <Form.Group controlId="Schedule_at" className="mb-3">
-                        <Form.Label>Schedule_at</Form.Label>
+                        <Form.Label>Schedule At</Form.Label>
                         <Form.Control type="datetime-local" value={schedule_at} onChange={(event)=>{
                             setScheduleAt(event.target.value)
                         }}/>

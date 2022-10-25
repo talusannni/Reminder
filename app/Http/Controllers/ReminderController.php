@@ -49,7 +49,22 @@ class ReminderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+            'schedule_at'=>'required'
+        ]);
+        try{
+            Reminder::create($request->post());
+
+            return response()->json([
+                'message'=>'Reminder Created Successfully!!'
+            ]);
+        }catch(\Exception $e){
+            Log::error($e->getMessage());
+            return response()->json([
+                'message'=>'Something goes wrong while Creating Reminder!!'
+            ],500);
+        }
     }
 
     /**

@@ -25,12 +25,12 @@ export default function CreateReminder() {
     formData.append('note', note)
     formData.append('schedule_at', schedule_at)
 
-    await axios.post("reminders/", formData).then(({data})=>{
+    await axios.post("/reminder", formData).then(({data})=>{
       Swal.fire({
         icon:"success",
         text:data.message
       })
-      navigate("/")
+      navigate("/reminder")
     }).catch(({response})=>{
       if(response.status===422){
         setValidationError(response.data.errors)
@@ -93,8 +93,8 @@ export default function CreateReminder() {
                   <Row>
                     <Col>
                       <Form.Group controlId="Schedule_at" className="mb-3">
-                        <Form.Label>Schedule_at</Form.Label>
-                        <Form.Control type="text" value={schedule_at} onChange={(event)=>{
+                        <Form.Label>Schedule At</Form.Label>
+                        <Form.Control type="datetime-local" value={schedule_at} onChange={(event)=>{
                             setScheduleAt(event.target.value)
                         }}/>
                       </Form.Group>

@@ -7049,7 +7049,7 @@ function CreateReminder() {
               formData.append('note', note);
               formData.append('schedule_at', schedule_at);
               _context.next = 7;
-              return axios__WEBPACK_IMPORTED_MODULE_1___default().post("reminders/", formData).then(function (_ref2) {
+              return axios__WEBPACK_IMPORTED_MODULE_1___default().post("/reminder", formData).then(function (_ref2) {
                 var data = _ref2.data;
                 sweetalert2__WEBPACK_IMPORTED_MODULE_2___default().fire({
                   icon: "success",
@@ -7154,7 +7154,7 @@ function CreateReminder() {
                       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_5__["default"].Label, {
                         children: "Schedule_at"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap_Form__WEBPACK_IMPORTED_MODULE_5__["default"].Control, {
-                        type: "text",
+                        type: "datetime-local",
                         value: schedule_at,
                         onChange: function onChange(event) {
                           setScheduleAt(event.target.value);
